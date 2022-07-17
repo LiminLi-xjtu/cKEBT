@@ -18,7 +18,7 @@ ggplot(plotdat,aes(x=TSNE1, y=TSNE2)) + geom_point(size=2,aes(color=cell.type, s
    theme_classic()+theme(title = element_text(size = rel(1.5)))
 #UMAP
 library(umap)
-iris.umap = umap::umap(mat51)
+iris.umap = umap::umap(data)
 plotdat <- data.frame(umap1=iris.umap$layout[,1],umap2=iris.umap$layout[,2])
 ggplot(plotdat,aes(x=umap1, y=umap2)) + geom_point(size=2,aes(color=cell.type, shape=batch.id)) + 
   scale_shape_manual(values = c(3, 20))+
